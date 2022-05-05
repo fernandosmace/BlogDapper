@@ -39,7 +39,7 @@ namespace Blog.Repositories
 
         public void Delete(int id)
         {
-            if (id != 0)
+            if (id == 0)
                 return;
 
             var model = _connection.Get<T>(id);
