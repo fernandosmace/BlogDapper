@@ -274,12 +274,12 @@ namespace Blog
         {
             var repository = new Repository<Category>(connection);
 
-            var cateogry = new Category(){
+            var category = new Category(){
                 Name = "web",
                 Slug = "web"
             };
 
-            repository.Create(cateogry);
+            repository.Create(category);
         }
 
         public static void UpdateCategory(SqlConnection connection)
@@ -292,7 +292,7 @@ namespace Blog
                 Slug = "web-development"
             };
 
-            repository.Update(cateogry);
+            repository.Update(category);
         }
 
         public static void DeleteCategory(SqlConnection connection, int id)
