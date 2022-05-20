@@ -16,6 +16,7 @@ namespace Blog
             connection.Open();
 
             //ReadUsers(connection);
+            ReadUsersWithRoles(connection);
             //ReadUser(connection, {id});
             //CreateUser(connection);
             //UpdateUser(connection);
@@ -56,9 +57,24 @@ namespace Blog
 
             foreach (var item in items)
                 Console.WriteLine($"{item.Name}");
-            
-            
+
+
             Console.WriteLine("-----");
+        }
+
+        public static void ReadUsersWithRoles(SqlConnection connection)
+        {
+            var repository = new UserRepository(connection);
+            var items = repository.GetWithRoles();
+
+            foreach (var item in items)
+            {
+                Console.Write(item.Name);
+                foreach(var role in item.Roles){
+                    Console.WriteLine($" - {role.Name}");
+                }
+            }
+
         }
 
         public static void ReadUser(SqlConnection connection, int id)
@@ -74,12 +90,13 @@ namespace Blog
         {
             var repository = new Repository<User>(connection);
 
-            var user = new User(){
+            var user = new User()
+            {
                 Name = "Fernando",
                 Email = "teste@teste2abfhsdasc.com.br",
                 PasswordHash = "HASH",
                 Bio = "Teste de usuário",
-                Image ="http://image.png",
+                Image = "http://image.png",
                 Slug = "fernando-aasasbfjhfc"
             };
 
@@ -90,13 +107,14 @@ namespace Blog
         {
             var repository = new Repository<User>(connection);
 
-            var user = new User(){
+            var user = new User()
+            {
                 Id = 20,
                 Name = "Fernando Soares Macedo",
                 Email = "fernando@teste.com.br",
                 PasswordHash = "HASH",
                 Bio = "Teste de usuário",
-                Image ="http://image.png",
+                Image = "http://image.png",
                 Slug = "fernando-soares"
             };
 
@@ -109,7 +127,7 @@ namespace Blog
 
             var user = repository.Get(id);
 
-            if(user is null)
+            if (user is null)
                 return;
 
             repository.Delete(user);
@@ -146,7 +164,8 @@ namespace Blog
         {
             var repository = new Repository<Role>(connection);
 
-            var role = new Role(){
+            var role = new Role()
+            {
                 Name = "Super Adm",
                 Slug = "super-adm"
             };
@@ -158,7 +177,8 @@ namespace Blog
         {
             var repository = new Repository<Role>(connection);
 
-            var role = new Role(){
+            var role = new Role()
+            {
                 Id = 1,
                 Name = "Super Admin",
                 Slug = "super-admin"
@@ -173,7 +193,7 @@ namespace Blog
 
             var user = repository.Get(id);
 
-            if(user is null)
+            if (user is null)
                 return;
 
             repository.Delete(user);
@@ -210,7 +230,8 @@ namespace Blog
         {
             var repository = new Repository<Tag>(connection);
 
-            var tag = new Tag(){
+            var tag = new Tag()
+            {
                 Name = "python",
                 Slug = "python"
             };
@@ -222,7 +243,8 @@ namespace Blog
         {
             var repository = new Repository<Tag>(connection);
 
-            var tag = new Tag(){
+            var tag = new Tag()
+            {
                 Id = 2,
                 Name = "python3",
                 Slug = "python3"
@@ -237,7 +259,7 @@ namespace Blog
 
             var user = repository.Get(id);
 
-            if(user is null)
+            if (user is null)
                 return;
 
             repository.Delete(user);
@@ -274,7 +296,8 @@ namespace Blog
         {
             var repository = new Repository<Category>(connection);
 
-            var category = new Category(){
+            var category = new Category()
+            {
                 Name = "web",
                 Slug = "web"
             };
@@ -286,7 +309,8 @@ namespace Blog
         {
             var repository = new Repository<Category>(connection);
 
-            var category = new Category(){
+            var category = new Category()
+            {
                 Id = 2,
                 Name = "web-development",
                 Slug = "web-development"
@@ -301,7 +325,7 @@ namespace Blog
 
             var user = repository.Get(id);
 
-            if(user is null)
+            if (user is null)
                 return;
 
             repository.Delete(user);
