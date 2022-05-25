@@ -73,6 +73,8 @@ namespace Blog
                 foreach(var role in item.Roles){
                     Console.WriteLine($" - {role.Name}");
                 }
+
+                Console.WriteLine();
             }
 
         }
