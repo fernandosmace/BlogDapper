@@ -35,12 +35,15 @@ namespace Blog.Repositories
                     if (usr == null)
                     {
                         usr = user;
-                        usr.Roles.Add(role);
+
+                        if (role is not null)
+                            usr.Roles.Add(role);
+
                         users.Add(usr);
                     }
                     else
                         usr.Roles.Add(role);
- 
+
                     return user;
                 }, splitOn: "Id");
             return users;
