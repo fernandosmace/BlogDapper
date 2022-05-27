@@ -17,6 +17,7 @@ namespace Blog.Views.TagViews
             List();
 
             Console.ReadKey();
+            MenuTagView.Load();
         }
 
         private static void List()
