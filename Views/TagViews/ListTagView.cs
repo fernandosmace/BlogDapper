@@ -11,6 +11,8 @@ namespace Blog.Views.TagViews
     {
         public static void Load()
         {
+            Console.WriteLine("");
+            Console.WriteLine("-------------");
             Console.WriteLine("Lista de Tags");
             Console.WriteLine("-------------");
 
