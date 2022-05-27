@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Blog.Views.TagViews;
+using Blog.Views.UserViews;
 
 namespace Blog.Views
 {
@@ -28,7 +29,7 @@ namespace Blog.Views
             switch (option)
             {
                 case 1:
-                    //MenuUserView.Load();
+                    MenuUserView.Load();
                     break;
                 case 2:
                     //MenuRoleView.Load();
