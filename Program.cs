@@ -1,18 +1,19 @@
 ﻿using System;
-using Blog.Models;
-using Blog.Repositories;
 using Blog.Views.TagViews;
-using Dapper.Contrib.Extensions;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace Blog
 {
     class Program
     {
-        private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Blog;User ID=sa;Password=a2t%JH!a@AgaxAG;trustservercertificate=true";
-
         static void Main(string[] args)
         {
+            var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
+
+
+            var CONNECTION_STRING = config["Database:ConnectionString"];
+
             Database.Connection = new SqlConnection(CONNECTION_STRING);
             Database.Connection.Open();
 
