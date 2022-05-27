@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blog.Views.RoleViews;
 using Blog.Views.TagViews;
 using Blog.Views.UserViews;
 
@@ -32,7 +33,7 @@ namespace Blog.Views
                     MenuUserView.Load();
                     break;
                 case 2:
-                    //MenuRoleView.Load();
+                    MenuRoleView.Load();
                     break;
                 case 3:
                     //MenuCategoryView.Load();
