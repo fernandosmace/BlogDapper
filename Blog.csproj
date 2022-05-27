@@ -5,9 +5,10 @@
     <UserSecretsId>1e5aee34-e2b6-4adb-a029-765d0bae5c39</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.0.123"/>
-    <PackageReference Include="Dapper.Contrib" Version="2.0.78"/>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0"/>
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0"/>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
   </ItemGroup>
 </Project>
