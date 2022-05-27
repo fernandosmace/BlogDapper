@@ -30,7 +30,7 @@ namespace Blog.Views.TagViews
                     CreateTagView.Load();
                     break;
                 case 3:
-                    //UpdateTagView.Load();
+                    UpdateTagView.Load();
                     break;
                 case 4:
                     //DeleteTagView.Load();
