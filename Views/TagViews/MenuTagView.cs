@@ -23,10 +23,10 @@ namespace Blog.Views.TagViews
             switch (option)
             {
                 case 1:
-                    //ListTagView.Load();
+                    ListTagView.Load();
                     break;
                 case 2:
-                    //CreateTagView.Load();
+                    CreateTagView.Load();
                     break;
                 case 3:
                     //UpdateTagView.Load();
