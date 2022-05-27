@@ -16,6 +16,7 @@ namespace Blog.Views.TagViews
             Console.WriteLine("2 - Cadastrar nova Tag");
             Console.WriteLine("3 - Atualizar Tag");
             Console.WriteLine("4 - Excluir Tag");
+            Console.WriteLine("5 - Voltar ao menu principal");
             Console.WriteLine();
 
             var option = short.Parse(Console.ReadLine());
@@ -33,6 +34,9 @@ namespace Blog.Views.TagViews
                     break;
                 case 4:
                     //DeleteTagView.Load();
+                    break;
+                case 5:
+                    StartView.Load();
                     break;
                 default:
                     Load();
