@@ -2,6 +2,7 @@ using System;
 using Blog.Views.CategoryViews;
 using Blog.Views.RoleViews;
 using Blog.Views.TagViews;
+using Blog.Views.UserRoleView;
 using Blog.Views.UserViews;
 
 namespace Blog.Views
@@ -41,7 +42,7 @@ namespace Blog.Views
                     MenuTagView.Load();
                     break;
                 case 5:
-                    //MenuUserRoleView.Load();
+                    MenuUserRoleView.Load();
                     break;
                 case 6:
                     //MenuPostTagView.Load();
