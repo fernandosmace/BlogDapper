@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using BlogDapper.Views.UserRoleView;
 
 namespace Blog.Views.UserRoleView
 {
@@ -29,7 +27,7 @@ namespace Blog.Views.UserRoleView
                     //ListUserRoleView.Load();
                     break;
                 case 2:
-                    //CreateUserRoleView.Load();
+                    CreateUserRoleView.Load();
                     break;
                 case 3:
                     //UpdateUserRoleView.Load();
