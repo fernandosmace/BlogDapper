@@ -27,7 +27,7 @@ namespace Blog.Views.CategoryViews
                     ListCategoryView.Load();
                     break;
                 case 2:
-                    //CreateCategoryView.Load();
+                    CreateCategoryView.Load();
                     break;
                 case 3:
                     //UpdateCategoryView.Load();
