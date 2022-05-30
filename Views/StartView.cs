@@ -23,6 +23,7 @@ namespace Blog.Views
             Console.WriteLine("5 - Vincular Usuário à Perfil");
             Console.WriteLine("6 - Vincular Post à Tag");
             Console.WriteLine("7 - Relatórios");
+            Console.WriteLine("8 - Sair");
             Console.WriteLine();
 
             var option = short.Parse(Console.ReadLine()!);
@@ -49,6 +50,10 @@ namespace Blog.Views
                     break;
                 case 7:
                     //MeuReports.Load();
+                    break;
+                case 8:
+                    Console.Clear();
+                    Environment.Exit(0);
                     break;
                 default:
                     Load();
