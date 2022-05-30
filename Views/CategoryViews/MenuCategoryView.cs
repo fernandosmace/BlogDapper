@@ -30,7 +30,7 @@ namespace Blog.Views.CategoryViews
                     CreateCategoryView.Load();
                     break;
                 case 3:
-                    //UpdateCategoryView.Load();
+                    UpdateCategoryView.Load();
                     break;
                 case 4:
                     //DeleteCategoryView.Load();
