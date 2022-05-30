@@ -33,7 +33,7 @@ namespace Blog.Views.CategoryViews
                     UpdateCategoryView.Load();
                     break;
                 case 4:
-                    //DeleteCategoryView.Load();
+                    DeleteCategoryView.Load();
                     break;
                 case 5:
                     StartView.Load();
