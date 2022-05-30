@@ -31,7 +31,7 @@ namespace Blog.Views.RoleViews
                     CreateRoleView.Load();
                     break;
                 case 3:
-                    //UpdateRoleView.Load();
+                    UpdateRoleView.Load();
                     break;
                 case 4:
                     //DeleteRoleView.Load();
