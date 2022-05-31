@@ -24,7 +24,7 @@ namespace Blog.Views.UserRoleView
             switch (option)
             {
                 case 1:
-                    //ListUserRoleView.Load();
+                    ListUserRoleView.Load();
                     break;
                 case 2:
                     CreateUserRoleView.Load();
