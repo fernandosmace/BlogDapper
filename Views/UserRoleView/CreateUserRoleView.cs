@@ -19,7 +19,7 @@ namespace BlogDapper.Views.UserRoleView
 
             if (CheckUser(idUser))
             {
-                Console.Write("Id Usuário: ");
+                Console.Write("Id Role: ");
                 var idRole = Int32.Parse(Console.ReadLine());
 
                 if (CheckRole(idRole))
