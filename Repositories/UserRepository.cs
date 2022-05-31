@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Blog.Models;
 using Dapper;
+using Dapper.Contrib.Extensions;
 using Microsoft.Data.SqlClient;
 
 namespace Blog.Repositories
@@ -42,6 +43,33 @@ namespace Blog.Repositories
                     return user;
                 }, splitOn: "Id");
             return users;
+        }
+
+        public UserRole GetUserRole(UserRole userRole)
+        {
+            var query = @"SELECT
+                            [UserId],
+                            [RoleId]
+                        FROM
+                            [UserRole]
+                        WHERE
+                            [UserId] = @UserId
+                            [RoleId] = @RoleId";
+
+            var result = Database.Connection.QueryFirst<UserRole>(query,
+            new
+            {
+                UserId = userRole.UserId,
+                RoleId = userRole.RoleId
+            });
+
+            var item = new UserRole
+            {
+                UserId = result.UserId,
+                RoleId = result.RoleId
+            };
+
+            return item;
         }
     }
 }
