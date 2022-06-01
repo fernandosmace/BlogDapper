@@ -33,7 +33,7 @@ namespace Blog.Views.PostViews
                     UpdatePostView.Load();
                     break;
                 case 4:
-                    //DeletePostView.Load();
+                    DeletePostView.Load();
                     break;
                 case 5:
                     StartView.Load();
