@@ -53,15 +53,20 @@ namespace Blog.Repositories
                         FROM
                             [UserRole]
                         WHERE
-                            [UserId] = @UserId
+                            [UserId] = @UserId AND
                             [RoleId] = @RoleId";
 
-            var result = Database.Connection.QueryFirst<UserRole>(query,
-            new
+            var result = Database.Connection.QuerySingleOrDefault<UserRole>(query,
+                        new
+                        {
+                            UserId = userRole.UserId,
+                            RoleId = userRole.RoleId
+                        });
+
+            if (result is null)
             {
-                UserId = userRole.UserId,
-                RoleId = userRole.RoleId
-            });
+                return null;
+            }
 
             var item = new UserRole
             {
