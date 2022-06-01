@@ -79,11 +79,17 @@ namespace Blog.Views.UserRoleView
             {
                 var repository = new UserRepository();
 
-                repository.DeleteUserRole(userRole);
+                if (repository.GetUserRole(userRole) is not null)
+                {
+                    repository.DeleteUserRole(userRole);
 
-                Console.WriteLine();
-                Console.WriteLine("Permissão excluída com sucesso!");
-
+                    Console.WriteLine();
+                    Console.WriteLine("Permissão excluída com sucesso!");
+                }
+                else
+                {
+                    Console.WriteLine("Permissão não encontrada.");
+                }
             }
             catch (System.Exception ex)
             {
