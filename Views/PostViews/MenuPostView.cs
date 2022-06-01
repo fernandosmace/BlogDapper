@@ -24,7 +24,7 @@ namespace Blog.Views.PostViews
             switch (option)
             {
                 case 1:
-                    //ListPostView.Load();
+                    ListPostView.Load();
                     break;
                 case 2:
                     CreatePostView.Load();
