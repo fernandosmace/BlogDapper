@@ -18,12 +18,12 @@ namespace Blog.Models
         public DateTime LastUpdateDate { get; set; }
 
         [Write(false)]
-        public Category category { get; set; }
+        public Category Category { get; set; }
 
         public int CategoryId { get; set; }
 
         [Write(false)]
-        public User author { get; set; }
+        public User Author { get; set; }
 
         public int AuthorId { get; set; }
     }
