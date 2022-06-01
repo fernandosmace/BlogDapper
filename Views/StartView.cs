@@ -1,5 +1,6 @@
 using System;
 using Blog.Views.CategoryViews;
+using Blog.Views.PostViews;
 using Blog.Views.RoleViews;
 using Blog.Views.TagViews;
 using Blog.Views.UserRoleView;
@@ -19,8 +20,8 @@ namespace Blog.Views
             Console.WriteLine("2 - Gestão de Perfis");
             Console.WriteLine("3 - Gestão de Categorias");
             Console.WriteLine("4 - Gestão de Tags");
-            Console.WriteLine("5 - Vincular Usuário à Perfil");
-            Console.WriteLine("6 - Vincular Post à Tag");
+            Console.WriteLine("5 - Gestão de Posts");
+            Console.WriteLine("6 - Gestão de Permissões");
             Console.WriteLine("7 - Relatórios");
             Console.WriteLine("8 - Sair");
             Console.WriteLine();
@@ -42,10 +43,10 @@ namespace Blog.Views
                     MenuTagView.Load();
                     break;
                 case 5:
-                    MenuUserRoleView.Load();
+                    MenuPostView.Load();
                     break;
                 case 6:
-                    //MenuPostTagView.Load();
+                    MenuUserRoleView.Load();
                     break;
                 case 7:
                     //MeuReports.Load();
