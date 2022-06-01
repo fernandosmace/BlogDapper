@@ -1,6 +1,5 @@
 ﻿using System;
 using Blog.Views;
-using Blog.Views.TagViews;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
