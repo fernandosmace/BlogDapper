@@ -76,5 +76,22 @@ namespace Blog.Repositories
 
             return item;
         }
+
+        public void DeleteUserRole(UserRole userRole)
+        {
+            var cmd = @"DELETE
+                        FROM
+                            [UserRole]
+                        WHERE
+                            [UserId] = @UserId AND
+                            [RoleId] = @RoleId";
+
+            Database.Connection.Execute(cmd,
+            new
+            {
+                UserId = userRole.UserId,
+                RoleId = userRole.RoleId
+            });
+        }
     }
 }
