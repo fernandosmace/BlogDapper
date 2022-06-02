@@ -19,11 +19,47 @@ namespace Blog.Views.UserViews
             Console.Write("Email: ");
             var email = Console.ReadLine();
 
+            string passwordA = null;
             Console.Write("Senha: ");
-            var passwordA = Console.ReadLine();
+            while (true)
+            {
+                var key = Console.ReadKey(true);
 
+                if (key.Key != ConsoleKey.Backspace &&
+                    key.Key != ConsoleKey.Escape &&
+                    key.Key != ConsoleKey.Spacebar)
+                {
+                    Console.Write("*");
+                    if (key.Key == ConsoleKey.Enter && passwordA.Length > 0)
+                    {
+                        Console.WriteLine();
+                        break;
+                    }
+
+                    passwordA += key.KeyChar;
+                }
+            }
+
+            string passwordB = null;
             Console.Write("Repita a senha: ");
-            var passwordB = Console.ReadLine();
+            while (true)
+            {
+                var key = Console.ReadKey(true);
+
+                if (key.Key != ConsoleKey.Backspace &&
+                    key.Key != ConsoleKey.Escape &&
+                    key.Key != ConsoleKey.Spacebar)
+                {
+                    Console.Write("*");
+                    if (key.Key == ConsoleKey.Enter && passwordB.Length > 0)
+                    {
+                        Console.WriteLine();
+                        break;
+                    }
+
+                    passwordB += key.KeyChar;
+                }
+            }
 
             if (passwordA == passwordB)
             {
@@ -49,7 +85,7 @@ namespace Blog.Views.UserViews
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("A senhas não são iguais!");
+                Console.WriteLine("As senhas não são iguais!");
             }
 
 
