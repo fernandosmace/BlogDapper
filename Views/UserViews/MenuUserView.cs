@@ -14,9 +14,10 @@ namespace Blog.Views.UserViews
             Console.WriteLine();
             Console.WriteLine("1 - Listar Usuários");
             Console.WriteLine("2 - Cadastrar novo Usuário");
-            Console.WriteLine("3 - Atualizar Usuário");
-            Console.WriteLine("4 - Excluir Usuário");
-            Console.WriteLine("5 - Voltar ao menu principal");
+            Console.WriteLine("3 - Alterar senha");
+            Console.WriteLine("4 - Atualizar Usuário");
+            Console.WriteLine("5 - Excluir Usuário");
+            Console.WriteLine("6 - Voltar ao menu principal");
             Console.WriteLine();
 
             var option = short.Parse(Console.ReadLine());
@@ -30,12 +31,15 @@ namespace Blog.Views.UserViews
                     CreateUserView.Load();
                     break;
                 case 3:
-                    UpdateUserView.Load();
+                    ChangePasswordUserView.Load();
                     break;
                 case 4:
-                    DeleteUserView.Load();
+                    UpdateUserView.Load();
                     break;
                 case 5:
+                    DeleteUserView.Load();
+                    break;
+                case 6:
                     StartView.Load();
                     break;
                 default:
