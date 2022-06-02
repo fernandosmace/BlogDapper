@@ -20,26 +20,39 @@ namespace Blog.Views.UserViews
             var email = Console.ReadLine();
 
             Console.Write("Senha: ");
-            var passwordHash = BCrypt.Net.BCrypt.HashPassword(Console.ReadLine());
+            var passwordA = Console.ReadLine();
 
-            Console.Write("Bio: ");
-            var bio = Console.ReadLine();
+            Console.Write("Repita a senha: ");
+            var passwordB = Console.ReadLine();
 
-            Console.Write("Image: ");
-            var image = Console.ReadLine();
-
-            Console.Write("Slug: ");
-            var slug = Console.ReadLine();
-
-            Create(new User
+            if (passwordA == passwordB)
             {
-                Name = name,
-                Email = email,
-                PasswordHash = passwordHash,
-                Bio = bio,
-                Image = image,
-                Slug = slug,
-            });
+                Console.Write("Bio: ");
+                var bio = Console.ReadLine();
+
+                Console.Write("Image: ");
+                var image = Console.ReadLine();
+
+                Console.Write("Slug: ");
+                var slug = Console.ReadLine();
+
+                Create(new User
+                {
+                    Name = name,
+                    Email = email,
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(passwordA),
+                    Bio = bio,
+                    Image = image,
+                    Slug = slug,
+                });
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("A senhas não são iguais!");
+            }
+
+
 
             Console.ReadKey();
             MenuUserView.Load();
