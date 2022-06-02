@@ -22,9 +22,6 @@ namespace Blog.Views.UserViews
             Console.Write("Email: ");
             var email = Console.ReadLine();
 
-            Console.Write("Senha: ");
-            var passwordHash = BCrypt.Net.BCrypt.HashPassword(Console.ReadLine());
-
             Console.Write("Bio: ");
             var bio = Console.ReadLine();
 
@@ -39,7 +36,6 @@ namespace Blog.Views.UserViews
                 Id = id,
                 Name = name,
                 Email = email,
-                PasswordHash = passwordHash,
                 Bio = bio,
                 Image = image,
                 Slug = slug,
@@ -62,6 +58,7 @@ namespace Blog.Views.UserViews
                     return;
                 }
 
+                user.PasswordHash = userExists.PasswordHash;
                 repository.Update(user);
 
                 Console.WriteLine();
